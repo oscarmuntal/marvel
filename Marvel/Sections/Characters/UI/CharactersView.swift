@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CharactersView: UIViewController {
+class CharactersView: UIViewController, CreatableView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
