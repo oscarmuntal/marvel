@@ -1,19 +1,18 @@
 //
-//  ViewController.swift
+//  CharactersView.swift
 //  Marvel
 //
 //  Created by A on 31/1/23.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class CharactersView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .red
+        
     }
-
-
 }
-
