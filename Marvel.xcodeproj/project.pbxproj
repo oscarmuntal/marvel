@@ -20,6 +20,9 @@
 		004A3C822989BBD60019C9F2 /* CharactersContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C812989BBD60019C9F2 /* CharactersContract.swift */; };
 		004A3C842989BEED0019C9F2 /* CharactersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C832989BEED0019C9F2 /* CharactersPresenter.swift */; };
 		004A3C862989BEF70019C9F2 /* CharactersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C852989BEF70019C9F2 /* CharactersInteractor.swift */; };
+		004A3C8C2989C52A0019C9F2 /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C8B2989C52A0019C9F2 /* CharactersTableViewCell.swift */; };
+		004A3C8E2989C5AE0019C9F2 /* CharacterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C8D2989C5AE0019C9F2 /* CharacterCellViewModel.swift */; };
+		004A3C942989C7DC0019C9F2 /* CharactersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C932989C7DC0019C9F2 /* CharactersModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		004A3C812989BBD60019C9F2 /* CharactersContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersContract.swift; sourceTree = "<group>"; };
 		004A3C832989BEED0019C9F2 /* CharactersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPresenter.swift; sourceTree = "<group>"; };
 		004A3C852989BEF70019C9F2 /* CharactersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersInteractor.swift; sourceTree = "<group>"; };
+		004A3C8B2989C52A0019C9F2 /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
+		004A3C8D2989C5AE0019C9F2 /* CharacterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewModel.swift; sourceTree = "<group>"; };
+		004A3C932989C7DC0019C9F2 /* CharactersModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 				004A3C592989B1990019C9F2 /* AppDelegate.swift */,
 				004A3C5B2989B1990019C9F2 /* SceneDelegate.swift */,
 				004A3C742989BACB0019C9F2 /* Components */,
+				004A3C922989C7C40019C9F2 /* Models */,
 				004A3C6D2989B4750019C9F2 /* Sections */,
 				004A3C622989B19A0019C9F2 /* Assets.xcassets */,
 				004A3C642989B19A0019C9F2 /* LaunchScreen.storyboard */,
@@ -106,6 +113,8 @@
 			children = (
 				004A3C6F2989B49E0019C9F2 /* CharactersView.swift */,
 				004A3C722989B7090019C9F2 /* CharactersView.storyboard */,
+				004A3C8B2989C52A0019C9F2 /* CharactersTableViewCell.swift */,
+				004A3C8D2989C5AE0019C9F2 /* CharacterCellViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -134,6 +143,14 @@
 				004A3C7B2989BB6A0019C9F2 /* BuilderProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		004A3C922989C7C40019C9F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				004A3C932989C7DC0019C9F2 /* CharactersModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +225,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				004A3C772989BAF10019C9F2 /* RootWireframe.swift in Sources */,
+				004A3C8C2989C52A0019C9F2 /* CharactersTableViewCell.swift in Sources */,
+				004A3C942989C7DC0019C9F2 /* CharactersModels.swift in Sources */,
 				004A3C822989BBD60019C9F2 /* CharactersContract.swift in Sources */,
 				004A3C7C2989BB6A0019C9F2 /* BuilderProtocols.swift in Sources */,
+				004A3C8E2989C5AE0019C9F2 /* CharacterCellViewModel.swift in Sources */,
 				004A3C7E2989BB910019C9F2 /* CharactersBuilder.swift in Sources */,
 				004A3C862989BEF70019C9F2 /* CharactersInteractor.swift in Sources */,
 				004A3C5A2989B1990019C9F2 /* AppDelegate.swift in Sources */,
