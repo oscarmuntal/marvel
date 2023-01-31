@@ -10,9 +10,15 @@ import UIKit
 
 class CharactersView: UIViewController, CreatableView {
 
+    var presenter: CharactersPresenterContract?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        presenter?.view = self
         
     }
+}
+
+extension CharactersView: CharactersViewContract {
+    
 }

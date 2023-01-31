@@ -10,3 +10,15 @@ import Foundation
 protocol CharactersWireframe {
     
 }
+
+protocol CharactersViewContract {
+    
+}
+
+protocol CharactersPresenterContract {
+    var view: CharactersViewContract? { get set }
+}
+
+protocol CharactersInteractorContract {
+    
+}

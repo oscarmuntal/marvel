@@ -16,6 +16,18 @@ class CharactersBuilder: Builder {
     }
     
     func build() -> UIViewController {
-        CharactersView.createFromStoryboard()
+        let view = CharactersView.createFromStoryboard()
+        view.presenter = build()
+        return view
+    }
+}
+
+private extension CharactersBuilder {
+    func build() -> CharactersPresenterContract {
+        CharactersPresenter(wireframe: wireframe, interactor: build())
+    }
+
+    func build() -> CharactersInteractorContract {
+        CharactersInteractor()
     }
 }
