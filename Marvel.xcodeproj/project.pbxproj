@@ -23,6 +23,13 @@
 		004A3C8C2989C52A0019C9F2 /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C8B2989C52A0019C9F2 /* CharactersTableViewCell.swift */; };
 		004A3C8E2989C5AE0019C9F2 /* CharacterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C8D2989C5AE0019C9F2 /* CharacterCellViewModel.swift */; };
 		004A3C942989C7DC0019C9F2 /* CharactersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C932989C7DC0019C9F2 /* CharactersModels.swift */; };
+		004A3C972989D7B60019C9F2 /* ApiRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C962989D7B60019C9F2 /* ApiRequestBuilder.swift */; };
+		004A3C992989D80F0019C9F2 /* MarvelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C982989D80F0019C9F2 /* MarvelApi.swift */; };
+		004A3C9B2989D8430019C9F2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C9A2989D8430019C9F2 /* NetworkManager.swift */; };
+		004A3C9D2989D8620019C9F2 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C9C2989D8620019C9F2 /* ApiRouter.swift */; };
+		004A3CA02989D8F50019C9F2 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3C9F2989D8F50019C9F2 /* BundleExtension.swift */; };
+		004A3CA42989D9780019C9F2 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CA32989D9780019C9F2 /* ApiKeys.swift */; };
+		004A3CA62989D9E20019C9F2 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CA52989D9E20019C9F2 /* StringExtensions.swift */; };
 		5CE39A13EA8C7D914E8177D6 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3073C740012C06E363DB96AC /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +52,13 @@
 		004A3C8B2989C52A0019C9F2 /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
 		004A3C8D2989C5AE0019C9F2 /* CharacterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewModel.swift; sourceTree = "<group>"; };
 		004A3C932989C7DC0019C9F2 /* CharactersModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersModels.swift; sourceTree = "<group>"; };
+		004A3C962989D7B60019C9F2 /* ApiRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestBuilder.swift; sourceTree = "<group>"; };
+		004A3C982989D80F0019C9F2 /* MarvelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApi.swift; sourceTree = "<group>"; };
+		004A3C9A2989D8430019C9F2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		004A3C9C2989D8620019C9F2 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		004A3C9F2989D8F50019C9F2 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		004A3CA32989D9780019C9F2 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		004A3CA52989D9E20019C9F2 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		3073C740012C06E363DB96AC /* Pods_Marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E69B34DC0605D22126941 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		EA047EA29BFA458C700E8219 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,9 +99,11 @@
 			children = (
 				004A3C592989B1990019C9F2 /* AppDelegate.swift */,
 				004A3C5B2989B1990019C9F2 /* SceneDelegate.swift */,
+				004A3CA22989D9650019C9F2 /* Constants */,
 				004A3C742989BACB0019C9F2 /* Components */,
 				004A3C922989C7C40019C9F2 /* Models */,
 				004A3C6D2989B4750019C9F2 /* Sections */,
+				004A3C9E2989D8E00019C9F2 /* Extensions */,
 				004A3C622989B19A0019C9F2 /* Assets.xcassets */,
 				004A3C642989B19A0019C9F2 /* LaunchScreen.storyboard */,
 				004A3C672989B19A0019C9F2 /* Info.plist */,
@@ -129,6 +145,7 @@
 		004A3C742989BACB0019C9F2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				004A3C952989D7A40019C9F2 /* Network */,
 				004A3C782989BB2A0019C9F2 /* Protocols */,
 				004A3C752989BAD80019C9F2 /* Wireframes */,
 			);
@@ -160,13 +177,40 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		004A3C952989D7A40019C9F2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				004A3C9C2989D8620019C9F2 /* ApiRouter.swift */,
+				004A3C9A2989D8430019C9F2 /* NetworkManager.swift */,
+				004A3C982989D80F0019C9F2 /* MarvelApi.swift */,
+				004A3C962989D7B60019C9F2 /* ApiRequestBuilder.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		004A3C9E2989D8E00019C9F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				004A3C9F2989D8F50019C9F2 /* BundleExtension.swift */,
+				004A3CA52989D9E20019C9F2 /* StringExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		004A3CA22989D9650019C9F2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				004A3CA32989D9780019C9F2 /* ApiKeys.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		A452622EE04F32391826E1AC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				EA047EA29BFA458C700E8219 /* Pods-Marvel.debug.xcconfig */,
 				7A2E69B34DC0605D22126941 /* Pods-Marvel.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -297,11 +341,18 @@
 				004A3C8C2989C52A0019C9F2 /* CharactersTableViewCell.swift in Sources */,
 				004A3C942989C7DC0019C9F2 /* CharactersModels.swift in Sources */,
 				004A3C822989BBD60019C9F2 /* CharactersContract.swift in Sources */,
+				004A3C9B2989D8430019C9F2 /* NetworkManager.swift in Sources */,
 				004A3C7C2989BB6A0019C9F2 /* BuilderProtocols.swift in Sources */,
 				004A3C8E2989C5AE0019C9F2 /* CharacterCellViewModel.swift in Sources */,
+				004A3C992989D80F0019C9F2 /* MarvelApi.swift in Sources */,
+				004A3C972989D7B60019C9F2 /* ApiRequestBuilder.swift in Sources */,
+				004A3CA42989D9780019C9F2 /* ApiKeys.swift in Sources */,
 				004A3C7E2989BB910019C9F2 /* CharactersBuilder.swift in Sources */,
 				004A3C862989BEF70019C9F2 /* CharactersInteractor.swift in Sources */,
+				004A3CA62989D9E20019C9F2 /* StringExtensions.swift in Sources */,
+				004A3CA02989D8F50019C9F2 /* BundleExtension.swift in Sources */,
 				004A3C5A2989B1990019C9F2 /* AppDelegate.swift in Sources */,
+				004A3C9D2989D8620019C9F2 /* ApiRouter.swift in Sources */,
 				004A3C7A2989BB350019C9F2 /* ViewProtocols.swift in Sources */,
 				004A3C702989B49E0019C9F2 /* CharactersView.swift in Sources */,
 				004A3C5C2989B1990019C9F2 /* SceneDelegate.swift in Sources */,
