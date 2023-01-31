@@ -20,8 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        //let storyboard = UIStoryboard(name: "CharactersView", bundle: nil)
-        //guard let charactersView = storyboard.instantiateViewController(withIdentifier: "CharactersView") as? CharactersView else { return }
         let charactersView = CharactersBuilder(wireframe: wireframe).build()
         window.rootViewController = UINavigationController(rootViewController: charactersView)
         self.window = window
