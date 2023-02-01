@@ -10,4 +10,5 @@ import Foundation
 struct CharacterCellViewModel {
     let id: Int
     let name: String
+    let profileImageUrl: URL?
 }

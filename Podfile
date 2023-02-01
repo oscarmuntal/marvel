@@ -7,5 +7,6 @@ target 'Marvel' do
 
   # Pods for Marvel
   pod 'Alamofire'
+  pod 'Kingfisher'
 
 end

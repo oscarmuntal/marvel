@@ -25,10 +25,20 @@ struct Character: Codable {
     let id: Int
     let name: String
     let description: String
+    let thumbnail: Thumbnail
 }
 
 extension Character {
     var toCellViewModel: CharacterCellViewModel {
-        .init(id: id, name: name)
+        .init(id: id, name: name, profileImageUrl: URL(string: thumbnail.path + "." + thumbnail.thumbnailExtension))
     }
+}
+
+struct Thumbnail: Codable {
+    enum CodingKeys: String, CodingKey {
+        case thumbnailExtension = "extension"
+        case path
+    }
+    let path: String
+    let thumbnailExtension: String
 }

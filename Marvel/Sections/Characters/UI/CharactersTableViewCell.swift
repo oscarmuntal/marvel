@@ -13,6 +13,8 @@ class CharactersTableViewCell: UITableViewCell {
     private var characterId: Int!
     
     func configure(with viewModel: CharacterCellViewModel) {
+        profileImage.setCharacterImage(with: viewModel.profileImageUrl)
+        profileImage.rounded()
         name.text = viewModel.name
         characterId = viewModel.id
     }
