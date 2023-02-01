@@ -40,6 +40,9 @@
 		004A3CF0298A6A3F0019C9F2 /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CEC298A6A3F0019C9F2 /* CharacterDetailPresenter.swift */; };
 		004A3CF1298A6A3F0019C9F2 /* CharacterDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CED298A6A3F0019C9F2 /* CharacterDetailContract.swift */; };
 		004A3CF4298A6A500019C9F2 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CF3298A6A500019C9F2 /* CharacterDetailView.swift */; };
+		004A3CF6298A6BCB0019C9F2 /* WireframeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CF5298A6BCB0019C9F2 /* WireframeProtocols.swift */; };
+		004A3CF8298A6BF60019C9F2 /* CharacterDetailOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CF7298A6BF60019C9F2 /* CharacterDetailOpener.swift */; };
+		004A3CFC298A6D200019C9F2 /* CharacterDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004A3CFB298A6D200019C9F2 /* CharacterDetailView.storyboard */; };
 		5CE39A13EA8C7D914E8177D6 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3073C740012C06E363DB96AC /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +82,9 @@
 		004A3CEC298A6A3F0019C9F2 /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
 		004A3CED298A6A3F0019C9F2 /* CharacterDetailContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailContract.swift; sourceTree = "<group>"; };
 		004A3CF3298A6A500019C9F2 /* CharacterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		004A3CF5298A6BCB0019C9F2 /* WireframeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireframeProtocols.swift; sourceTree = "<group>"; };
+		004A3CF7298A6BF60019C9F2 /* CharacterDetailOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailOpener.swift; sourceTree = "<group>"; };
+		004A3CFB298A6D200019C9F2 /* CharacterDetailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CharacterDetailView.storyboard; sourceTree = "<group>"; };
 		3073C740012C06E363DB96AC /* Pods_Marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E69B34DC0605D22126941 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		EA047EA29BFA458C700E8219 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,8 +141,8 @@
 		004A3C6D2989B4750019C9F2 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				004A3CE9298A69FF0019C9F2 /* Character Detail */,
 				004A3C6E2989B4800019C9F2 /* Characters */,
+				004A3CE9298A69FF0019C9F2 /* Character Detail */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 			children = (
 				004A3C792989BB350019C9F2 /* ViewProtocols.swift */,
 				004A3C7B2989BB6A0019C9F2 /* BuilderProtocols.swift */,
+				004A3CF5298A6BCB0019C9F2 /* WireframeProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -243,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				004A3CF2298A6A480019C9F2 /* UI */,
+				004A3CF7298A6BF60019C9F2 /* CharacterDetailOpener.swift */,
 				004A3CEA298A6A3F0019C9F2 /* CharacterDetailBuilder.swift */,
 				004A3CED298A6A3F0019C9F2 /* CharacterDetailContract.swift */,
 				004A3CEB298A6A3F0019C9F2 /* CharacterDetailInteractor.swift */,
@@ -255,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				004A3CF3298A6A500019C9F2 /* CharacterDetailView.swift */,
+				004A3CFB298A6D200019C9F2 /* CharacterDetailView.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -336,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004A3CFC298A6D200019C9F2 /* CharacterDetailView.storyboard in Resources */,
 				004A3C662989B19A0019C9F2 /* LaunchScreen.storyboard in Resources */,
 				004A3C632989B19A0019C9F2 /* Assets.xcassets in Resources */,
 				004A3C732989B7090019C9F2 /* CharactersView.storyboard in Resources */,
@@ -414,6 +424,7 @@
 				004A3C5A2989B1990019C9F2 /* AppDelegate.swift in Sources */,
 				004A3CB32989F1730019C9F2 /* UIImageExtension.swift in Sources */,
 				004A3C9D2989D8620019C9F2 /* ApiRouter.swift in Sources */,
+				004A3CF6298A6BCB0019C9F2 /* WireframeProtocols.swift in Sources */,
 				004A3CEE298A6A3F0019C9F2 /* CharacterDetailBuilder.swift in Sources */,
 				004A3C7A2989BB350019C9F2 /* ViewProtocols.swift in Sources */,
 				004A3CF1298A6A3F0019C9F2 /* CharacterDetailContract.swift in Sources */,
@@ -421,6 +432,7 @@
 				004A3C5C2989B1990019C9F2 /* SceneDelegate.swift in Sources */,
 				004A3CA82989DB970019C9F2 /* CharactersRouter.swift in Sources */,
 				004A3C842989BEED0019C9F2 /* CharactersPresenter.swift in Sources */,
+				004A3CF8298A6BF60019C9F2 /* CharacterDetailOpener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,11 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
-
-class RootWireframe {
+class RootWireframe: RootAwareWireframe {
+    var rootViewController: UINavigationController?
     static let shared = RootWireframe()
-        
 }
 
-extension RootWireframe: CharactersWireframe {}
+extension RootWireframe: Pushable, CharacterDetailOpener, CharactersWireframe, CharacterDetailWireframe {}

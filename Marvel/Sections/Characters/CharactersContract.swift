@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-protocol CharactersWireframe {}
+protocol CharactersWireframe: CharacterDetailOpener {}
 
 protocol CharactersViewContract: ReloadAwareView {
     func configureTableFooter()
@@ -19,6 +19,7 @@ protocol CharactersPresenterContract {
     var view: CharactersViewContract? { get set }
     func numCharacters() -> Int
     func cellViewModel(at indexPath: IndexPath) -> CharacterCellViewModel
+    func didSelectItem(at indexPath: IndexPath)
     func isPaginating() -> Bool
     func didScroll()
 }

@@ -31,6 +31,10 @@ extension CharactersView: UITableViewDelegate, UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelectItem(at: indexPath)
+    }
 }
 
 extension CharactersView: UIScrollViewDelegate {

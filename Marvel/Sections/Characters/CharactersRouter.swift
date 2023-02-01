@@ -7,12 +7,21 @@
 
 import Foundation
 
-protocol CharactersRouterContract {}
+protocol CharactersRouterContract {
+    func didSelect(item: Int)
+}
 
-class CharactersRouter: CharactersRouterContract {
+class CharactersRouter {
     private let wireframe: CharactersWireframe
     
     init(wireframe: CharactersWireframe) {
         self.wireframe = wireframe
     }
 }
+
+extension CharactersRouter: CharactersRouterContract {
+    func didSelect(item: Int) {
+        wireframe.openCharacterDetail(with: item)
+    }
+}
+

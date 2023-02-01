@@ -44,6 +44,11 @@ extension CharactersPresenter: CharactersPresenterContract {
         characters[indexPath.row].toCellViewModel
     }
     
+    func didSelectItem(at indexPath: IndexPath) {
+        let character = characters[indexPath.row]
+        router?.didSelect(item: character.id)
+    }
+    
     func didScroll() {
         loadCharacters()
     }
