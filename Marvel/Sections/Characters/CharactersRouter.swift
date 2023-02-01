@@ -5,7 +5,6 @@
 //  Created by Òscar Muntal on 1/2/23.
 //
 
-import Foundation
 
 protocol CharactersRouterContract {
     func didSelect(item: Int)
@@ -24,4 +23,3 @@ extension CharactersRouter: CharactersRouterContract {
         wireframe.openCharacterDetail(with: item)
     }
 }
-

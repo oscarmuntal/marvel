@@ -5,15 +5,15 @@
 //  Created by Òscar Muntal on 1/2/23.
 //
 
-import Foundation
 import Alamofire
 
 protocol CharacterDetailWireframe {}
 
-protocol CharacterDetailViewContract {
+protocol CharacterDetailViewContract: MarvelCharactersViewContract {
     func configure(with character: Character)
     func startActivityIndicator()
     func stopActivityIndicator()
+    func showErrorAlert(withTitle title: String, withMessage message: String)
 }
 
 protocol CharacterDetailPresenterContract {

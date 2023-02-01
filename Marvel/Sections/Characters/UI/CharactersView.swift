@@ -5,7 +5,6 @@
 //  Created by A on 31/1/23.
 //
 
-import Foundation
 import UIKit
 
 class CharactersView: UIViewController, CreatableView, ViewWithTable {
@@ -73,6 +72,13 @@ extension CharactersView: CharactersViewContract {
     func resetTableFooter() {
         DispatchQueue.main.async {
             self.tableView.tableFooterView = nil
+        }
+    }
+    
+    func errorAlertAction() -> UIAlertAction {
+        return UIAlertAction(title: "OK", style: .cancel) { action in
+            self.dismiss(animated: true)
+            self.rechargeTableView()
         }
     }
 }

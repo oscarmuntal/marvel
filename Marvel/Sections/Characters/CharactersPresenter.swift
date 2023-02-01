@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class CharactersPresenter {
     private let wireframe: CharactersWireframe?
     private let interactor: CharactersInteractorContract?
@@ -68,8 +69,7 @@ private extension CharactersPresenter {
                 self?.characters.append(contentsOf: results)
                 
             case .failure(let error):
-                // handle error
-                print(error)
+                self?.view?.showErrorAlert(withTitle: error.title, withMessage: error.message)
             }
             self?.currentPage += 1
         }

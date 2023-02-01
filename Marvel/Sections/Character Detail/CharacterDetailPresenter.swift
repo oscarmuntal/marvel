@@ -5,7 +5,6 @@
 //  Created by Òscar Muntal on 1/2/23.
 //
 
-import Foundation
 import Alamofire
 
 class CharacterDetailPresenter: CharacterDetailPresenterContract {
@@ -38,7 +37,7 @@ private extension CharacterDetailPresenter {
                 self?.view?.configure(with: character)
 
             case .failure(let error):
-                print(error)
+                self?.view?.showErrorAlert(withTitle: error.title, withMessage: error.message)
             }
         })
     }

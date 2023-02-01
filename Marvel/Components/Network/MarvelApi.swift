@@ -71,4 +71,3 @@ enum MarvelApi: ApiCall {
         return (timeStamp + privateKey + publicKey).MD5
     }
 }
-
