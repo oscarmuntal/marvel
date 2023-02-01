@@ -42,7 +42,10 @@
 		004A3CF4298A6A500019C9F2 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CF3298A6A500019C9F2 /* CharacterDetailView.swift */; };
 		004A3CF6298A6BCB0019C9F2 /* WireframeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CF5298A6BCB0019C9F2 /* WireframeProtocols.swift */; };
 		004A3CF8298A6BF60019C9F2 /* CharacterDetailOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CF7298A6BF60019C9F2 /* CharacterDetailOpener.swift */; };
-		004A3CFC298A6D200019C9F2 /* CharacterDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004A3CFB298A6D200019C9F2 /* CharacterDetailView.storyboard */; };
+		004A3CFE298A6F150019C9F2 /* CharacterDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004A3CFD298A6F150019C9F2 /* CharacterDetailView.storyboard */; };
+		004A3D00298A6FD80019C9F2 /* CharacterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CFF298A6FD80019C9F2 /* CharacterConstants.swift */; };
+		004A3D02298A70320019C9F2 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3D01298A70320019C9F2 /* UIViewExtension.swift */; };
+		004A3D04298A72870019C9F2 /* CharacterDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3D03298A72870019C9F2 /* CharacterDetailProvider.swift */; };
 		5CE39A13EA8C7D914E8177D6 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3073C740012C06E363DB96AC /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +87,10 @@
 		004A3CF3298A6A500019C9F2 /* CharacterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		004A3CF5298A6BCB0019C9F2 /* WireframeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireframeProtocols.swift; sourceTree = "<group>"; };
 		004A3CF7298A6BF60019C9F2 /* CharacterDetailOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailOpener.swift; sourceTree = "<group>"; };
-		004A3CFB298A6D200019C9F2 /* CharacterDetailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CharacterDetailView.storyboard; sourceTree = "<group>"; };
+		004A3CFD298A6F150019C9F2 /* CharacterDetailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CharacterDetailView.storyboard; sourceTree = "<group>"; };
+		004A3CFF298A6FD80019C9F2 /* CharacterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterConstants.swift; sourceTree = "<group>"; };
+		004A3D01298A70320019C9F2 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		004A3D03298A72870019C9F2 /* CharacterDetailProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailProvider.swift; sourceTree = "<group>"; };
 		3073C740012C06E363DB96AC /* Pods_Marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E69B34DC0605D22126941 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		EA047EA29BFA458C700E8219 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 				004A3CA52989D9E20019C9F2 /* StringExtensions.swift */,
 				004A3CB02989F0140019C9F2 /* UIImageViewExtensions.swift */,
 				004A3CB22989F1730019C9F2 /* UIImageExtension.swift */,
+				004A3D01298A70320019C9F2 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -234,6 +241,7 @@
 			children = (
 				004A3CA32989D9780019C9F2 /* ApiKeys.swift */,
 				004A3CAE2989E4D50019C9F2 /* ViewsIdentifiers.swift */,
+				004A3CFF298A6FD80019C9F2 /* CharacterConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -242,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				004A3CAC2989E1FF0019C9F2 /* CharactersProvider.swift */,
+				004A3D03298A72870019C9F2 /* CharacterDetailProvider.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -253,8 +262,8 @@
 				004A3CF7298A6BF60019C9F2 /* CharacterDetailOpener.swift */,
 				004A3CEA298A6A3F0019C9F2 /* CharacterDetailBuilder.swift */,
 				004A3CED298A6A3F0019C9F2 /* CharacterDetailContract.swift */,
-				004A3CEB298A6A3F0019C9F2 /* CharacterDetailInteractor.swift */,
 				004A3CEC298A6A3F0019C9F2 /* CharacterDetailPresenter.swift */,
+				004A3CEB298A6A3F0019C9F2 /* CharacterDetailInteractor.swift */,
 			);
 			path = "Character Detail";
 			sourceTree = "<group>";
@@ -263,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				004A3CF3298A6A500019C9F2 /* CharacterDetailView.swift */,
-				004A3CFB298A6D200019C9F2 /* CharacterDetailView.storyboard */,
+				004A3CFD298A6F150019C9F2 /* CharacterDetailView.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -345,7 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				004A3CFC298A6D200019C9F2 /* CharacterDetailView.storyboard in Resources */,
+				004A3CFE298A6F150019C9F2 /* CharacterDetailView.storyboard in Resources */,
 				004A3C662989B19A0019C9F2 /* LaunchScreen.storyboard in Resources */,
 				004A3C632989B19A0019C9F2 /* Assets.xcassets in Resources */,
 				004A3C732989B7090019C9F2 /* CharactersView.storyboard in Resources */,
@@ -409,6 +418,7 @@
 				004A3C942989C7DC0019C9F2 /* CharactersModels.swift in Sources */,
 				004A3C822989BBD60019C9F2 /* CharactersContract.swift in Sources */,
 				004A3C9B2989D8430019C9F2 /* NetworkManager.swift in Sources */,
+				004A3D02298A70320019C9F2 /* UIViewExtension.swift in Sources */,
 				004A3C7C2989BB6A0019C9F2 /* BuilderProtocols.swift in Sources */,
 				004A3C8E2989C5AE0019C9F2 /* CharacterCellViewModel.swift in Sources */,
 				004A3C992989D80F0019C9F2 /* MarvelApi.swift in Sources */,
@@ -416,6 +426,7 @@
 				004A3CB12989F0140019C9F2 /* UIImageViewExtensions.swift in Sources */,
 				004A3C972989D7B60019C9F2 /* ApiRequestBuilder.swift in Sources */,
 				004A3CA42989D9780019C9F2 /* ApiKeys.swift in Sources */,
+				004A3D00298A6FD80019C9F2 /* CharacterConstants.swift in Sources */,
 				004A3CF4298A6A500019C9F2 /* CharacterDetailView.swift in Sources */,
 				004A3C7E2989BB910019C9F2 /* CharactersBuilder.swift in Sources */,
 				004A3C862989BEF70019C9F2 /* CharactersInteractor.swift in Sources */,
@@ -426,6 +437,7 @@
 				004A3C9D2989D8620019C9F2 /* ApiRouter.swift in Sources */,
 				004A3CF6298A6BCB0019C9F2 /* WireframeProtocols.swift in Sources */,
 				004A3CEE298A6A3F0019C9F2 /* CharacterDetailBuilder.swift in Sources */,
+				004A3D04298A72870019C9F2 /* CharacterDetailProvider.swift in Sources */,
 				004A3C7A2989BB350019C9F2 /* ViewProtocols.swift in Sources */,
 				004A3CF1298A6A3F0019C9F2 /* CharacterDetailContract.swift in Sources */,
 				004A3C702989B49E0019C9F2 /* CharactersView.swift in Sources */,

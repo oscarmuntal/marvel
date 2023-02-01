@@ -10,10 +10,17 @@ import Alamofire
 
 protocol CharacterDetailWireframe {}
 
-protocol CharacterDetailViewContract {}
+protocol CharacterDetailViewContract {
+    func configure(with character: Character)
+    func startActivityIndicator()
+    func stopActivityIndicator()
+}
 
 protocol CharacterDetailPresenterContract {
     var view: CharacterDetailViewContract? { get set }
+    var characterId: Int? { get set }
 }
 
-protocol CharacterDetailInteractorContract {}
+protocol CharacterDetailInteractorContract {
+    func fetchCharacterDetail(id: Int, completion: @escaping (Result<Response, MarvelError>) -> Void)
+}

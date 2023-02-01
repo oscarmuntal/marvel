@@ -26,11 +26,46 @@ struct Character: Codable {
     let name: String
     let description: String
     let thumbnail: Thumbnail
+    let comics: SectionStructure
+    let series: SectionStructure
+    let stories: SectionStructure
+    let events: SectionStructure
+    let urls: [Url]
 }
 
 extension Character {
     var toCellViewModel: CharacterCellViewModel {
         .init(id: id, name: name, profileImageUrl: URL(string: thumbnail.path + "." + thumbnail.thumbnailExtension))
+    }
+}
+
+struct SectionStructure: Codable {
+    let available: Int
+    let collectionURI: String
+    let items: [SectionItem]
+}
+
+struct SectionItem: Codable {
+    let resourceURI: String
+    let name: String
+}
+
+struct Url: Codable {
+    let type: UrlTitle
+    let url: String
+}
+
+enum UrlTitle: String, Codable {
+    case detail
+    case wiki
+    case comiclink
+    
+    var title: String {
+        switch self {
+        case .detail: return "Detail"
+        case .wiki: return "Wiki"
+        case .comiclink: return "Comic Link"
+        }
     }
 }
 

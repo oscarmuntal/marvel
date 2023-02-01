@@ -110,6 +110,13 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="P4d-pi-HRE" secondAttribute="trailing" id="uPR-jP-JXk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="qHy-t9-W6r" id="vXH-2N-r1h"/>
+                        <outlet property="descriptionLabel" destination="lmm-Co-FTx" id="cnk-j6-sjT"/>
+                        <outlet property="descriptionTopConstraint" destination="lxS-Qe-ARv" id="b1d-eD-GtE"/>
+                        <outlet property="profileImage" destination="Bcx-80-mcw" id="cKa-vB-WD5"/>
+                        <outlet property="sectionsStack" destination="2WD-3R-QX3" id="MjE-Y0-AKB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,6 +14,6 @@ protocol CharacterDetailOpener {
 
 extension CharacterDetailOpener where Self: Pushable, Self: CharacterDetailWireframe  {
     func openCharacterDetail(with id: Int) {
-        push(viewController: CharacterDetailBuilder(wireframe: self).buildViewController())
+        push(viewController: CharacterDetailBuilder(wireframe: self, characterId: id).buildViewController())
     }
 }
