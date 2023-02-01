@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 protocol Builder {
-    func build() -> UIViewController
+    func buildViewController() -> UIViewController
 }

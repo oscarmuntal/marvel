@@ -10,18 +10,23 @@ import UIKit
 
 protocol CharactersBuilderContract: Builder {
     var wireframe: CharactersWireframe { get }
-    func build() -> UIViewController
-    func build() -> CharactersPresenterContract
-    func build() -> CharactersInteractorContract
+    func buildViewController() -> UIViewController
+    func buildPresenter() -> CharactersPresenterContract
+    func buildInteractor() -> CharactersInteractorContract
+    func buildRouter() -> CharactersRouterContract
 }
 
 extension CharactersBuilderContract {
-    func build() -> CharactersPresenterContract {
-        CharactersPresenter(wireframe: wireframe, interactor: build())
+    func buildPresenter() -> CharactersPresenterContract {
+        CharactersPresenter(wireframe: wireframe, interactor: buildInteractor(), router: buildRouter())
     }
 
-    func build() -> CharactersInteractorContract {
+    func buildInteractor() -> CharactersInteractorContract {
         CharactersInteractor()
+    }
+    
+    func buildRouter() -> CharactersRouterContract {
+        CharactersRouter(wireframe: wireframe)
     }
 }
 
@@ -32,9 +37,9 @@ class CharactersBuilder: CharactersBuilderContract {
         self.wireframe = wireframe
     }
     
-    func build() -> UIViewController {
+    func buildViewController() -> UIViewController {
         let view = CharactersView.createFromStoryboard()
-        view.presenter = build()
+        view.presenter = buildPresenter()
         return view
     }
 }
