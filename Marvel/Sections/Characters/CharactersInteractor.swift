@@ -5,6 +5,7 @@
 //  Created by Òscar Muntal on 31/1/23.
 //
 
+import Combine
 
 class CharactersInteractor: CharactersInteractorContract {
     private var paginating = false
@@ -15,17 +16,18 @@ class CharactersInteractor: CharactersInteractorContract {
         self.charactersProvider = charactersProvider
     }
     
-    func fetchCharacters(offset: String, completion: @escaping (Result<[Character], MarvelError>) -> Void) {
+    func fetchCharacters(offset: String) -> Future<[Character], MarvelError> {
         paginating = true
-        charactersProvider.fetchCharacters(offset: offset) { (dataResult: Result<Response, MarvelError>) in
-            switch dataResult {
-            case .success(let result):
-                completion(.success(result.data.results))
-                
-            case .failure(let error):
-                completion(.failure(error))
+        return Future { promise in
+            self.charactersProvider.fetchCharacters(offset: offset) { (dataResult: Result<Response, MarvelError>) in
+                switch dataResult {
+                case .success(let result):
+                    promise(.success(result.data.results))
+                case .failure(let error):
+                    promise(.failure(error))
+                }
+                self.paginating = false
             }
-            self.paginating = false
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import Combine
 
 protocol MarvelCharactersViewContract: UIViewController {
     func errorAlertAction() -> UIAlertAction
@@ -40,6 +41,6 @@ protocol CharactersPresenterContract {
 }
 
 protocol CharactersInteractorContract {
-    func fetchCharacters(offset: String, completion: @escaping (Result<[Character], MarvelError>) -> Void)
+    func fetchCharacters(offset: String) -> Future<[Character], MarvelError>
     var isPaginating: Bool { get }
 }

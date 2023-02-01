@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class CharactersPresenter {
     private let wireframe: CharactersWireframe?
@@ -16,6 +17,7 @@ class CharactersPresenter {
     var offset: String {
         String(currentPage*20)
     }
+    var cancellables: Set<AnyCancellable> = []
     
     init(wireframe: CharactersWireframe, interactor: CharactersInteractorContract, router: CharactersRouterContract) {
         self.wireframe = wireframe
@@ -61,17 +63,21 @@ extension CharactersPresenter: CharactersPresenterContract {
 
 private extension CharactersPresenter {
     func loadCharacters() {
-        view?.configureTableFooter()
-        interactor?.fetchCharacters(offset: offset) { [weak self] result in
-            self?.view?.resetTableFooter()
-            switch result {
-            case .success(let results):
+        guard let view = view, let interactor = interactor else { return }
+        view.configureTableFooter()
+        interactor.fetchCharactersWithCombine(offset: offset)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .finished:
+                    print("Finished! - Publisher stopped observing")
+                case .failure(let error):
+                    print("Failure! with \(error)")
+                    self?.view?.showErrorAlert(withTitle: error.title, withMessage: error.message)
+                }
+            }, receiveValue: { [weak self] results in
                 self?.characters.append(contentsOf: results)
-                
-            case .failure(let error):
-                self?.view?.showErrorAlert(withTitle: error.title, withMessage: error.message)
-            }
-            self?.currentPage += 1
-        }
+                self?.currentPage += 1
+            }).store(in: &cancellables)
     }
 }
