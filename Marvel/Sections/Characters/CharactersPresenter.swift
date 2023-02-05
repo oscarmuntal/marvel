@@ -65,7 +65,7 @@ private extension CharactersPresenter {
     func loadCharacters() {
         guard let view = view, let interactor = interactor else { return }
         view.configureTableFooter()
-        interactor.fetchCharactersWithCombine(offset: offset)
+        interactor.fetchCharacters(offset: offset)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
