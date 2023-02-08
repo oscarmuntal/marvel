@@ -12,7 +12,7 @@ class CharactersPresenter {
     private let wireframe: CharactersWireframe?
     private let interactor: CharactersInteractorContract?
     private let router: CharactersRouterContract?
-    
+    private var paginating = false
     var currentPage = 0
     var offset: String {
         String(currentPage*20)
@@ -57,7 +57,7 @@ extension CharactersPresenter: CharactersPresenterContract {
     }
     
     func isPaginating() -> Bool {
-        interactor?.isPaginating ?? false
+        paginating
     }
 }
 
@@ -65,11 +65,11 @@ private extension CharactersPresenter {
     func loadCharacters() {
         guard let view = view, let interactor = interactor else { return }
         view.configureTableFooter()
-        interactor.startPaginating()
+        paginating = true
         interactor.fetchCharacters(offset: offset)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
-                interactor.stopPaginating()
+                self?.paginating = false
                 switch completion {
                 case .finished:
                     print("Finished! - Publisher stopped observing")

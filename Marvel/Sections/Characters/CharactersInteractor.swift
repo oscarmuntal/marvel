@@ -8,8 +8,6 @@
 import Combine
 
 class CharactersInteractor: CharactersInteractorContract {
-    public var isPaginating: Bool { paginating }
-    private var paginating = false
     private let charactersProvider: CharactersProviderContract
     
     init(charactersProvider: CharactersProviderContract = CharactersProvider()) {
@@ -17,14 +15,6 @@ class CharactersInteractor: CharactersInteractorContract {
     }
     
     func fetchCharacters(offset: String) -> AnyPublisher<Response, MarvelError> {
-        return charactersProvider.fetchCharacters(offset: offset)
+        charactersProvider.fetchCharacters(offset: offset)
     }
-    
-    public func stopPaginating() {
-        paginating = false
-    }
-    public func startPaginating() {
-        paginating = true
-    }
-    
 }

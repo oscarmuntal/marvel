@@ -42,7 +42,4 @@ protocol CharactersPresenterContract {
 
 protocol CharactersInteractorContract {
     func fetchCharacters(offset: String) -> AnyPublisher<Response, MarvelError>
-    func startPaginating()
-    func stopPaginating()
-    var isPaginating: Bool { get }
 }
