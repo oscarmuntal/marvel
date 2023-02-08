@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import Combine
 
 protocol CharacterDetailWireframe {}
 
@@ -22,5 +23,5 @@ protocol CharacterDetailPresenterContract {
 }
 
 protocol CharacterDetailInteractorContract {
-    func fetchCharacterDetail(id: Int, completion: @escaping (Result<Response, MarvelError>) -> Void)
+    func fetchCharacterDetail(id: Int) -> AnyPublisher<Response, MarvelError>
 }

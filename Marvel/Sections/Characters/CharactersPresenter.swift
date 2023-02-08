@@ -56,9 +56,7 @@ extension CharactersPresenter: CharactersPresenterContract {
         loadCharacters()
     }
     
-    func isPaginating() -> Bool {
-        paginating
-    }
+    func isPaginating() -> Bool { paginating }
 }
 
 private extension CharactersPresenter {
@@ -71,11 +69,10 @@ private extension CharactersPresenter {
             .sink(receiveCompletion: { [weak self] completion in
                 self?.paginating = false
                 switch completion {
-                case .finished:
-                    print("Finished! - Publisher stopped observing")
                 case .failure(let error):
-                    print("Failure! with \(error)")
                     self?.view?.showErrorAlert(withTitle: error.title, withMessage: error.message)
+                case .finished:
+                    break
                 }
             }, receiveValue: { [weak self] response in
                 self?.characters.append(contentsOf: response.data.results)

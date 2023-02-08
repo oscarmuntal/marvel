@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Combine
 
 protocol CharacterDetailProviderContract {
-    func fetchCharacterById(_ id: Int, _ completion: @escaping (Result<Response, MarvelError>) -> Void)
+    func fetchCharacterById(_ id: Int) -> AnyPublisher<Response, MarvelError>
 }
 
 class CharacterDetailProvider: CharacterDetailProviderContract {
@@ -18,15 +19,7 @@ class CharacterDetailProvider: CharacterDetailProviderContract {
         self.apiRouter = apiRouter
     }
     
-    func fetchCharacterById(_ id: Int, _ completion: @escaping (Result<Response, MarvelError>) -> Void) {
-        apiRouter.requestDecodable(MarvelApi.characterDetail(id: id)) { (dataResult: Result<Response, MarvelError>) in
-            switch dataResult {
-            case .success(let result):
-                completion(.success(result))
-                
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+    func fetchCharacterById(_ id: Int) -> AnyPublisher<Response, MarvelError> {
+        apiRouter.requestDecodablePublisher(MarvelApi.characterDetail(id: id))
     }
 }

@@ -5,6 +5,8 @@
 //  Created by Òscar Muntal on 1/2/23.
 //
 
+import Combine
+
 class CharacterDetailInteractor: CharacterDetailInteractorContract {
     let characterDetailProvider: CharacterDetailProviderContract
     
@@ -12,15 +14,7 @@ class CharacterDetailInteractor: CharacterDetailInteractorContract {
         self.characterDetailProvider = characterDetailProvider
     }
     
-    func fetchCharacterDetail(id: Int, completion: @escaping (Result<Response, MarvelError>) -> Void) {
-        characterDetailProvider.fetchCharacterById(id) { (dataResult: Result<Response, MarvelError>) in
-            switch dataResult {
-            case .success(let result):
-                completion(.success(result))
-                
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+    func fetchCharacterDetail(id: Int) -> AnyPublisher<Response, MarvelError> {
+        characterDetailProvider.fetchCharacterById(id)
     }
 }

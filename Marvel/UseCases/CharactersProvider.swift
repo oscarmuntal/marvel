@@ -20,6 +20,6 @@ class CharactersProvider: CharactersProviderContract {
     }
     
     func fetchCharacters(offset: String) -> AnyPublisher<Response, MarvelError> {
-        return apiRouter.requestDecodablePublisher(MarvelApi.characters(offset: offset))
+        apiRouter.requestDecodablePublisher(MarvelApi.characters(offset: offset))
     }
 }
