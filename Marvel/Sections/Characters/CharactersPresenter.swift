@@ -65,9 +65,11 @@ private extension CharactersPresenter {
     func loadCharacters() {
         guard let view = view, let interactor = interactor else { return }
         view.configureTableFooter()
+        interactor.startPaginating()
         interactor.fetchCharacters(offset: offset)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
+                interactor.stopPaginating()
                 switch completion {
                 case .finished:
                     print("Finished! - Publisher stopped observing")
@@ -75,8 +77,8 @@ private extension CharactersPresenter {
                     print("Failure! with \(error)")
                     self?.view?.showErrorAlert(withTitle: error.title, withMessage: error.message)
                 }
-            }, receiveValue: { [weak self] results in
-                self?.characters.append(contentsOf: results)
+            }, receiveValue: { [weak self] response in
+                self?.characters.append(contentsOf: response.data.results)
                 self?.currentPage += 1
             }).store(in: &cancellables)
     }

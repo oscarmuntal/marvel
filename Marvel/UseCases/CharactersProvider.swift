@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Combine
 
 protocol CharactersProviderContract {
-    func fetchCharacters(offset: String, completion: @escaping (Result<Response, MarvelError>) -> Void)
+    func fetchCharacters(offset: String) -> AnyPublisher<Response, MarvelError>
 }
 
 class CharactersProvider: CharactersProviderContract {
@@ -18,15 +19,7 @@ class CharactersProvider: CharactersProviderContract {
         self.apiRouter = apiRouter
     }
     
-    func fetchCharacters(offset: String, completion: @escaping (Result<Response, MarvelError>) -> Void) {
-        apiRouter.requestDecodable(MarvelApi.characters(offset: offset)) { (dataResult: Result<Response, MarvelError>) in
-            switch dataResult {
-            case .success(let result):
-                completion(.success(result))
-                
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+    func fetchCharacters(offset: String) -> AnyPublisher<Response, MarvelError> {
+        return apiRouter.requestDecodablePublisher(MarvelApi.characters(offset: offset))
     }
 }

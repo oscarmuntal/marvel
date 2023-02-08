@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import Combine
 
 public enum MarvelError: Error {
     case charactersListError(String)
@@ -33,6 +34,7 @@ public enum MarvelError: Error {
 
 public protocol ApiRouting {
     func requestDecodable<T: Decodable>(_ apiCall: ApiCall, _ completion: @escaping (Result<T, MarvelError>) -> Void)
+    func requestDecodablePublisher<T: Decodable>(_ apiCall: ApiCall) -> AnyPublisher<T, MarvelError>
 }
 
 public class ApiRouter: ApiRouting {
@@ -63,6 +65,21 @@ public class ApiRouter: ApiRouting {
         } catch (let error) {
             completion(.failure(error as! MarvelError))
         }
+    }
+    
+    public func requestDecodablePublisher<T: Decodable>(_ apiCall: ApiCall) -> AnyPublisher<T, MarvelError> {
+        Deferred {
+            Future { [weak self] promise in
+                self?.requestDecodable(apiCall) { (result: Result<T, MarvelError>) in
+                    switch result {
+                    case .success(let data):
+                        promise(.success(data))
+                    case .failure(let error):
+                        promise(.failure(error))
+                    }
+                }
+            }
+        }.eraseToAnyPublisher()
     }
     
     func charactersListErrorMessage(by data: Data) -> String {
