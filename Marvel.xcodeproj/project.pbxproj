@@ -46,8 +46,19 @@
 		004A3D00298A6FD80019C9F2 /* CharacterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3CFF298A6FD80019C9F2 /* CharacterConstants.swift */; };
 		004A3D02298A70320019C9F2 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3D01298A70320019C9F2 /* UIViewExtension.swift */; };
 		004A3D04298A72870019C9F2 /* CharacterDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004A3D03298A72870019C9F2 /* CharacterDetailProvider.swift */; };
+		1FA3EB2F2998234300C57E0E /* MarvelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA3EB2E2998234300C57E0E /* MarvelTests.swift */; };
 		5CE39A13EA8C7D914E8177D6 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3073C740012C06E363DB96AC /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FA3EB302998234400C57E0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 004A3C4E2989B1990019C9F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 004A3C552989B1990019C9F2;
+			remoteInfo = Marvel;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		004A3C562989B1990019C9F2 /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +102,8 @@
 		004A3CFF298A6FD80019C9F2 /* CharacterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterConstants.swift; sourceTree = "<group>"; };
 		004A3D01298A70320019C9F2 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		004A3D03298A72870019C9F2 /* CharacterDetailProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailProvider.swift; sourceTree = "<group>"; };
+		1FA3EB2C2998234300C57E0E /* MarvelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA3EB2E2998234300C57E0E /* MarvelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelTests.swift; sourceTree = "<group>"; };
 		3073C740012C06E363DB96AC /* Pods_Marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E69B34DC0605D22126941 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		EA047EA29BFA458C700E8219 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +118,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FA3EB292998234300C57E0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -112,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				004A3C582989B1990019C9F2 /* Marvel */,
+				1FA3EB2D2998234300C57E0E /* MarvelTests */,
 				004A3C572989B1990019C9F2 /* Products */,
 				A452622EE04F32391826E1AC /* Pods */,
 				D9638E4157F909ED2B7459CA /* Frameworks */,
@@ -122,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				004A3C562989B1990019C9F2 /* Marvel.app */,
+				1FA3EB2C2998234300C57E0E /* MarvelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -277,6 +299,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		1FA3EB2D2998234300C57E0E /* MarvelTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FA3EB2E2998234300C57E0E /* MarvelTests.swift */,
+			);
+			path = MarvelTests;
+			sourceTree = "<group>";
+		};
 		A452622EE04F32391826E1AC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +346,24 @@
 			productReference = 004A3C562989B1990019C9F2 /* Marvel.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1FA3EB2B2998234300C57E0E /* MarvelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FA3EB342998234400C57E0E /* Build configuration list for PBXNativeTarget "MarvelTests" */;
+			buildPhases = (
+				1FA3EB282998234300C57E0E /* Sources */,
+				1FA3EB292998234300C57E0E /* Frameworks */,
+				1FA3EB2A2998234300C57E0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FA3EB312998234400C57E0E /* PBXTargetDependency */,
+			);
+			name = MarvelTests;
+			productName = MarvelTests;
+			productReference = 1FA3EB2C2998234300C57E0E /* MarvelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -323,11 +371,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					004A3C552989B1990019C9F2 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					1FA3EB2B2998234300C57E0E = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 004A3C552989B1990019C9F2;
 					};
 				};
 			};
@@ -345,6 +397,7 @@
 			projectRoot = "";
 			targets = (
 				004A3C552989B1990019C9F2 /* Marvel */,
+				1FA3EB2B2998234300C57E0E /* MarvelTests */,
 			);
 		};
 /* End PBXProject section */
@@ -358,6 +411,13 @@
 				004A3C662989B19A0019C9F2 /* LaunchScreen.storyboard in Resources */,
 				004A3C632989B19A0019C9F2 /* Assets.xcassets in Resources */,
 				004A3C732989B7090019C9F2 /* CharactersView.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FA3EB2A2998234300C57E0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +508,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1FA3EB282998234300C57E0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FA3EB2F2998234300C57E0E /* MarvelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FA3EB312998234400C57E0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 004A3C552989B1990019C9F2 /* Marvel */;
+			targetProxy = 1FA3EB302998234400C57E0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		004A3C642989B19A0019C9F2 /* LaunchScreen.storyboard */ = {
@@ -636,6 +712,46 @@
 			};
 			name = Release;
 		};
+		1FA3EB322998234400C57E0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q9RJPHW4B8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muntalapps.MarvelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvel.app/Marvel";
+			};
+			name = Debug;
+		};
+		1FA3EB332998234400C57E0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q9RJPHW4B8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muntalapps.MarvelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvel.app/Marvel";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -653,6 +769,15 @@
 			buildConfigurations = (
 				004A3C6B2989B19A0019C9F2 /* Debug */,
 				004A3C6C2989B19A0019C9F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FA3EB342998234400C57E0E /* Build configuration list for PBXNativeTarget "MarvelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FA3EB322998234400C57E0E /* Debug */,
+				1FA3EB332998234400C57E0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
