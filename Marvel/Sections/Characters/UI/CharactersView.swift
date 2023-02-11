@@ -2,12 +2,12 @@
 //  CharactersView.swift
 //  Marvel
 //
-//  Created by A on 31/1/23.
+//  Created by Òscar Muntal on 31/1/23.
 //
 
 import UIKit
 
-class CharactersView: UIViewController, CreatableView, ViewWithTable {
+class CharactersView: UIViewController, CreatableView, ViewWithTable, Presentable {
     @IBOutlet weak var tableView: UITableView!
     var table: UITableView { tableView }
     var presenter: CharactersPresenterContract?

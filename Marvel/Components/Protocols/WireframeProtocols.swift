@@ -31,3 +31,15 @@ extension Pushable where Self: RootAwareWireframe {
         }
     }
 }
+
+protocol Presentable {
+    func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?)
+}
+
+extension Presentable {
+    func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+        DispatchQueue.main.async {
+            self.present(viewControllerToPresent, animated: flag, completion: completion)
+        }
+    }
+}

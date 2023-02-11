@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class CharacterDetailView: UIViewController, CreatableView {
+class CharacterDetailView: UIViewController, CreatableView, Presentable {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var descriptionTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var descriptionLabel: UILabel!

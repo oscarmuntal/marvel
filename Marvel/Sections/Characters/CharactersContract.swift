@@ -8,18 +8,16 @@
 import Alamofire
 import Combine
 
-protocol MarvelCharactersViewContract: UIViewController {
+protocol MarvelCharactersViewContract: UIViewController, AlertOpener {
     func errorAlertAction() -> UIAlertAction
     func showErrorAlert(withTitle title: String, withMessage message: String)
 }
 
 extension MarvelCharactersViewContract {
     func showErrorAlert(withTitle title: String, withMessage message: String) {
-        DispatchQueue.main.async {
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alertController.addAction(self.errorAlertAction())
-            self.present(alertController, animated: true)
-        }
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(self.errorAlertAction())
+        openAlert(alertController, animated: true)
     }
 }
 
@@ -36,8 +34,8 @@ protocol CharactersPresenterContract {
     func numCharacters() -> Int
     func cellViewModel(at indexPath: IndexPath) -> CharacterCellViewModel
     func didSelectItem(at indexPath: IndexPath)
-    func isPaginating() -> Bool
     func didScroll()
+    func isPaginating() -> Bool
 }
 
 protocol CharactersInteractorContract {

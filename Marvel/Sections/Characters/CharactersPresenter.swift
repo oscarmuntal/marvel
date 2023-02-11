@@ -61,9 +61,9 @@ extension CharactersPresenter: CharactersPresenterContract {
 
 private extension CharactersPresenter {
     func loadCharacters() {
-        guard let view = view, let interactor = interactor else { return }
-        view.configureTableFooter()
+        guard let view = view, let interactor = interactor, !paginating else { return }
         paginating = true
+        view.configureTableFooter()
         interactor.fetchCharacters(offset: offset)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
