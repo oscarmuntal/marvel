@@ -110,25 +110,20 @@ class CharactersPresenterTests: XCTestCase {
 // MARK: - Mocks
 
 class CharactersViewMock: UIViewController, CharactersViewContract, Presentable {
-    var reloadCalled = false
-    var showErrorAlertCalled = false
     var configureTableFooterCalled = false
-    var resetTableFooterCalled = false
+    var showErrorAlertCalled = false
+    var reloadCalled = false
     
-    func reload() {
-        reloadCalled = true
+    func configureTableFooter() {
+        configureTableFooterCalled = true
     }
     
     func showErrorAlert(withTitle title: String, withMessage message: String) {
         showErrorAlertCalled = true
     }
     
-    func configureTableFooter() {
-        configureTableFooterCalled = true
-    }
-    
-    func resetTableFooter() {
-        resetTableFooterCalled = true
+    func reload() {
+        reloadCalled = true
     }
     
     func errorAlertAction() -> UIAlertAction {

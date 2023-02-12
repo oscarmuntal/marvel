@@ -25,7 +25,6 @@ protocol CharactersWireframe: CharacterDetailOpener {}
 
 protocol CharactersViewContract: ReloadAwareView, MarvelCharactersViewContract {
     func configureTableFooter()
-    func resetTableFooter()
     func showErrorAlert(withTitle title: String, withMessage message: String)
 }
 

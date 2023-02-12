@@ -69,12 +69,6 @@ extension CharactersView: CharactersViewContract {
         }
     }
     
-    func resetTableFooter() {
-        DispatchQueue.main.async {
-            self.tableView.tableFooterView = nil
-        }
-    }
-    
     func errorAlertAction() -> UIAlertAction {
         return UIAlertAction(title: "OK", style: .cancel) { action in
             self.dismiss(animated: true)
