@@ -9,7 +9,6 @@ import XCTest
 @testable import Marvel
 
 class CharactersBuilderTests: XCTestCase {
-    
     var charactersBuilder: CharactersBuilder!
     var wireframe: CharactersWireframeMock!
     
