@@ -9,9 +9,9 @@ import Foundation
 import Combine
 
 class CharactersPresenter {
-    private let wireframe: CharactersWireframe?
-    private let interactor: CharactersInteractorContract?
-    private let router: CharactersRouterContract?
+    public let wireframe: CharactersWireframe?
+    public let interactor: CharactersInteractorContract?
+    public let router: CharactersRouterContract?
     private var paginating = false
     var currentPage = 0
     var offset: String {

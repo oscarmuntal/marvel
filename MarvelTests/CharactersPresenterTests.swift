@@ -11,7 +11,6 @@ import Combine
 @testable import Marvel
 
 class CharactersPresenterTests: XCTestCase {
-    
     private var presenter: CharactersPresenter!
     private var view: CharactersViewMock!
     private var interactor: CharactersInteractorMock!
@@ -103,87 +102,6 @@ class CharactersPresenterTests: XCTestCase {
         XCTAssertTrue(interactor.fetchCharactersCalled)
         XCTAssertEqual(presenter.currentPage, 0)
         XCTAssertEqual(presenter.offset, "0")
-    }
-}
-
-
-// MARK: - Mocks
-
-class CharactersViewMock: UIViewController, CharactersViewContract, Presentable {
-    var configureTableFooterCalled = false
-    var showErrorAlertCalled = false
-    var reloadCalled = false
-    
-    func configureTableFooter() {
-        configureTableFooterCalled = true
-    }
-    
-    func showErrorAlert(withTitle title: String, withMessage message: String) {
-        showErrorAlertCalled = true
-    }
-    
-    func reload() {
-        reloadCalled = true
-    }
-    
-    func errorAlertAction() -> UIAlertAction {
-        return UIAlertAction(title: "Ok", style: .default, handler: nil)
-    }
-}
-
-class CharactersInteractorMock: CharactersInteractorContract {
-    var fetchCharactersCalled = false
-    var offset = ""
-    
-    func fetchCharacters(offset: String) -> AnyPublisher<Response, MarvelError> {
-        fetchCharactersCalled = true
-        self.offset = offset
-        return Empty().eraseToAnyPublisher()
-    }
-}
-
-
-//class CharactersInteractorMock2: CharactersInteractorContract {
-//    var fetchCharactersCalled = false
-//    var offset = ""
-//
-//    func fetchCharacters(offset: String) -> AnyPublisher<Response, MarvelError> {
-//        fetchCharactersCalled = true
-//        self.offset = offset
-//        let characters = [
-//            defaultCharacter(id: 1011334, name: "3-D Man"),
-//            defaultCharacter(id: 1017100, name: "A-Bomb (HAS)"),
-//            defaultCharacter(id: 1009144, name: "A.I.M."),
-//            defaultCharacter(id: 1009146, name: "Aaron Stack"),
-//            defaultCharacter(id: 1009148, name: "Abomination (Emil Blonsky)")
-//        ]
-//        let data = CharactersData(offset: 0, limit: 0, total: characters.count, count: characters.count, results: characters)
-//        let response = Response(copyright: "", attributionText: "", data: data)
-//        return Result.success(response)
-//            .publisher
-//            .mapError { _ in MarvelError }
-//            .eraseToAnyPublisher()
-//    }
-//}
-
-
-class CharactersWireframeMock: CharactersWireframe {
-    var openCharacterDetailCalled = false
-    var id: Int = 0
-    
-    func openCharacterDetail(with id: Int) {
-        openCharacterDetailCalled = true
-        self.id = id
-    }
-}
-
-class CharactersRouterMock: CharactersRouterContract {
-    var didSelectItemCalled = false
-    var selectedItem: Int?
-    
-    func didSelect(item: Int) {
-        didSelectItemCalled = true
-        selectedItem = item
     }
 }
 
