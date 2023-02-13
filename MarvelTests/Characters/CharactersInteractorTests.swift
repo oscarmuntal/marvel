@@ -34,6 +34,7 @@ class CharactersInteractorTests: XCTestCase {
         let offset = "0"
         let cancelable = interactor.fetchCharacters(offset: offset)
             .sink(receiveCompletion: { completion in
+                // then
                 switch completion {
                 case .finished:
                     break
@@ -52,14 +53,5 @@ class CharactersInteractorTests: XCTestCase {
             })
         XCTAssertNotNil(cancelable)
     }
-}
-
-// MARK: - Helpers
-func defaultResponse() -> Response {
-    Response(copyright: "copyright: Òscar Muntal 2023", attributionText: "", data: defaultCharactersData())
-}
-
-func defaultCharactersData() -> CharactersData {
-    CharactersData(offset: 0, limit: 0, total: 0, count: 0, results: [])
 }
 

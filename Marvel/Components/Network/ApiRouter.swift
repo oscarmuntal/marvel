@@ -96,3 +96,18 @@ public class ApiRouter: ApiRouting {
         }
     }
 }
+
+extension MarvelError: Equatable {
+    public static func ==(lhs: MarvelError, rhs: MarvelError) -> Bool {
+        switch (lhs, rhs) {
+        case (.charactersListError(let lhsMessage), .charactersListError(let rhsMessage)):
+            return lhsMessage == rhsMessage
+        case (.characterNotFound, .characterNotFound):
+            return true
+        case (.other, .other):
+            return true
+        default:
+            return false
+        }
+    }
+}
