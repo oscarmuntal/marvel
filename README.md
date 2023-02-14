@@ -2,6 +2,8 @@
 
 [English]:
 
+To be able to run this project, please create a pair of API keys, public and private, from here (https://developer.marvel.com/documentation/authorization) and add them to the ApiKeys.swift file in the project.
+
 This application consists of a main view with a listing of Marvel superheroes ordered alphabetically with 20 results per page when scrolling. When tapping on a superhero in the list, the detail screen is displayed with all its characteristics: its name in the header of the screen, photo, description (if it has one), and the following lists (if it has them): comics, series, stories, events, and URLs.
 
 For development, the VIPER architecture has been applied, which we use at the ATSistemas Expert Center, as it fits with the Clean Architecture paradigm and achieves systems with the following characteristics:
@@ -13,9 +15,12 @@ Testable: business logic can be tested without a graphical interface, database, 
 It has been developed with UIKit
 Cocoapods: to add external frameworks
 The closure pattern has been changed to Combine for the communication between Providers, Interactors, and Presenters of the data downloaded from the API.
-
+It's been added Unit Testing using XCTest in all components from each section using Mocks from the rest of the necessary components in each SUT.
+ 
 
 [Español]:
+
+Para poder ejecutar este proyecto hace falta crear un par de API keys, una pública y una privada, desde aquí  (https://developer.marvel.com/documentation/authorization) y añadirlas al fichero ApiKeys.swift del proyecto
 
 Esta aplicación consta de una vista principal con el listado de super héroes de Marvel ordenados alfabeticamente paginando de 20 en 20 resultados cuando se hace scroll.
 Al pulsar sobre un super héroe de la lista se muestra la pantalla detalle con todas sus características: Su nombre en la cabecera de la pantalla, foto, descripción (si la tiene), y los siguientes listados (si los tiene): comics, series, stories, eventos y urls.
@@ -28,5 +33,5 @@ Para el desarrollo se ha aplicado la arquitectura VIPER que usamos en el Centro 
 Se ha desarrollado en Swift con UIKit.
 Para añadir frameworks externos se ha usado Cocoapods.
 Se ha cambiado del patrón closure a Combine para la comunicación entre los Providers, Interactors y Presenters de los datos descargados de la API.
-
+Se ha añadido Unit Testing usando XCTest en todos los componentes de cada sección usando Mocks del resto de componentes necesarios en cada SUT. 
 
