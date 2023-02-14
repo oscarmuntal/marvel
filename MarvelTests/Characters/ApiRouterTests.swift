@@ -14,15 +14,18 @@ import Combine
 class ApiRouterTests: XCTestCase {
     private var apiRouter: ApiRouter!
     private var networkManager: NetworkManagerMock!
+    private var networkManagerWithError: NetworkManagerMockWithError!
     
     override func setUp() {
         super.setUp()
-        networkManager = NetworkManagerMock()
-        apiRouter = ApiRouter(networkManager: networkManager)
+//        networkManager = NetworkManagerMock()
+//        apiRouter = ApiRouter(networkManager: networkManager)
     }
     
     func testRequestDecodableSuccess() {
         // given
+        networkManager = NetworkManagerMock()
+        apiRouter = ApiRouter(networkManager: networkManager)
         let expectedResult = "testResult".data(using: .utf8)!
         networkManager.mockedData = expectedResult
         networkManager.mockedResult = .success("testResult")
@@ -41,6 +44,31 @@ class ApiRouterTests: XCTestCase {
         })
         waitForExpectations(timeout: 5.0, handler: nil)
     }
+    
+    func testRequestDecodableFailure() {
+        // given
+        networkManagerWithError = NetworkManagerMockWithError(error: NetworkManagerError.missingApiBaseUrl)
+        apiRouter = ApiRouter(networkManager: networkManagerWithError)
+        
+        // when
+        let expectation = self.expectation(description: "Request should fail")
+        apiRouter.requestDecodable(MarvelApi.characters(offset: "0")) { (result: Result<String, MarvelError>) in
+            // then
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, MarvelError.other)
+                expectation.fulfill()
+            case .success:
+                XCTFail("The request should fail with error")
+            }
+        }
+        
+        waitForExpectations(timeout: 1) { error in
+            if let error = error {
+                XCTFail("The request should not timeout. Error: \(error)")
+            }
+        }
+    }
 }
 
 extension Data {
@@ -55,8 +83,8 @@ class NetworkManagerMock: NetworkManager {
     var mockedData: Data?
     
     func request<T: Decodable>(_ urlRequest: URLRequest,
-                                      onSuccess: @escaping (T, Int?) -> Void,
-                                      onError: @escaping (Error, Int?, Data?) -> Void) {
+                               onSuccess: @escaping (T, Int?) -> Void,
+                               onError: @escaping (Error, Int?, Data?) -> Void) {
         if let result = mockedResult as? Result<T, Error> {
             switch result {
             case .success(let response):
@@ -67,3 +95,18 @@ class NetworkManagerMock: NetworkManager {
         }
     }
 }
+
+class NetworkManagerMockWithError: NetworkManager {
+    let error: Error
+    
+    init(error: Error) {
+        self.error = error
+    }
+    
+    func request<T: Decodable>(_ urlRequest: URLRequest,
+                               onSuccess: @escaping (T, Int?) -> Void,
+                               onError: @escaping (Error, Int?, Data?) -> Void) {
+        onError(error, nil, nil)
+    }
+}
+
