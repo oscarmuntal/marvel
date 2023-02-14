@@ -11,7 +11,7 @@ import Combine
 class ApiRouterMock: ApiRouting {
     var requestDecodableCalled = false
     var requestDecodablePublisherCalled = false
-    var completionResult: Result<Response, MarvelError>?
+    var completionResult: Result<MarvelResponse, MarvelError>?
     
     func requestDecodable<T: Decodable>(_ apiCall: ApiCall, _ completion: @escaping (Result<T, MarvelError>) -> Void) {
         requestDecodableCalled = true

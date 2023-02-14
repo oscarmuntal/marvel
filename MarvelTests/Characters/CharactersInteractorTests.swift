@@ -27,7 +27,7 @@ class CharactersInteractorTests: XCTestCase {
 
     func testFetchCharacters() {
         // given
-        let expectedResult = Result<Response, MarvelError>.success(defaultResponse())
+        let expectedResult = Result<MarvelResponse, MarvelError>.success(defaultResponse())
         charactersProvider.result = expectedResult
         
         // when

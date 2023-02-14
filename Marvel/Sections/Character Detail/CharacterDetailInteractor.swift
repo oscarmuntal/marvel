@@ -14,7 +14,7 @@ class CharacterDetailInteractor: CharacterDetailInteractorContract {
         self.characterDetailProvider = characterDetailProvider
     }
     
-    func fetchCharacterDetail(id: Int) -> AnyPublisher<Response, MarvelError> {
+    func fetchCharacterDetail(id: Int) -> AnyPublisher<MarvelResponse, MarvelError> {
         characterDetailProvider.fetchCharacterById(id)
     }
 }

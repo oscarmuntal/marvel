@@ -23,5 +23,5 @@ protocol CharacterDetailPresenterContract {
 }
 
 protocol CharacterDetailInteractorContract {
-    func fetchCharacterDetail(id: Int) -> AnyPublisher<Response, MarvelError>
+    func fetchCharacterDetail(id: Int) -> AnyPublisher<MarvelResponse, MarvelError>
 }

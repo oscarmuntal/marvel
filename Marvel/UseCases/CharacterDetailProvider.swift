@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol CharacterDetailProviderContract {
-    func fetchCharacterById(_ id: Int) -> AnyPublisher<Response, MarvelError>
+    func fetchCharacterById(_ id: Int) -> AnyPublisher<MarvelResponse, MarvelError>
 }
 
 class CharacterDetailProvider: CharacterDetailProviderContract {
@@ -19,7 +19,7 @@ class CharacterDetailProvider: CharacterDetailProviderContract {
         self.apiRouter = apiRouter
     }
     
-    func fetchCharacterById(_ id: Int) -> AnyPublisher<Response, MarvelError> {
+    func fetchCharacterById(_ id: Int) -> AnyPublisher<MarvelResponse, MarvelError> {
         apiRouter.requestDecodablePublisher(MarvelApi.characterDetail(id: id))
     }
 }

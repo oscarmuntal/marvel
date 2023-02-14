@@ -14,7 +14,7 @@ class CharactersInteractor: CharactersInteractorContract {
         self.charactersProvider = charactersProvider
     }
     
-    func fetchCharacters(offset: String) -> AnyPublisher<Response, MarvelError> {
+    func fetchCharacters(offset: String) -> AnyPublisher<MarvelResponse, MarvelError> {
         charactersProvider.fetchCharacters(offset: offset)
     }
 }

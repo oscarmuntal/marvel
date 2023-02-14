@@ -34,7 +34,7 @@ class CharactersPresenterTests: XCTestCase {
             defaultCharacter(id: 2),
             defaultCharacter(id: 3)
         ])
-        let response = Response(copyright: "Copyright", attributionText: "Attribution Text", data: charactersData)
+        let response = MarvelResponse(copyright: "Copyright", attributionText: "Attribution Text", data: charactersData)
         presenter.characters = response.data.results
         
         // when

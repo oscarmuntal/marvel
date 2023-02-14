@@ -59,6 +59,7 @@
 		1FEC11D6299A72FA00EBE779 /* CharactersProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC11D5299A72FA00EBE779 /* CharactersProviderTests.swift */; };
 		1FEC11D8299A74DC00EBE779 /* ApiRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC11D7299A74DC00EBE779 /* ApiRouterMock.swift */; };
 		1FEC11DA299A933900EBE779 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC11D9299A933900EBE779 /* HelperMethods.swift */; };
+		1FEC11DC299A9D4600EBE779 /* ApiRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC11DB299A9D4600EBE779 /* ApiRouterTests.swift */; };
 		5CE39A13EA8C7D914E8177D6 /* Pods_Marvel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3073C740012C06E363DB96AC /* Pods_Marvel.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +129,7 @@
 		1FEC11D5299A72FA00EBE779 /* CharactersProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersProviderTests.swift; sourceTree = "<group>"; };
 		1FEC11D7299A74DC00EBE779 /* ApiRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouterMock.swift; sourceTree = "<group>"; };
 		1FEC11D9299A933900EBE779 /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
+		1FEC11DB299A9D4600EBE779 /* ApiRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouterTests.swift; sourceTree = "<group>"; };
 		3073C740012C06E363DB96AC /* Pods_Marvel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E69B34DC0605D22126941 /* Pods-Marvel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.release.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.release.xcconfig"; sourceTree = "<group>"; };
 		EA047EA29BFA458C700E8219 /* Pods-Marvel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel.debug.xcconfig"; path = "Target Support Files/Pods-Marvel/Pods-Marvel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -353,8 +355,9 @@
 				1FA3EB352998242800C57E0E /* CharactersPresenterTests.swift */,
 				1FEC11D0299A69FF00EBE779 /* CharactersInteractorTests.swift */,
 				1FEC11D5299A72FA00EBE779 /* CharactersProviderTests.swift */,
-				1FA3EB3B2999B04000C57E0E /* Mocks */,
+				1FEC11DB299A9D4600EBE779 /* ApiRouterTests.swift */,
 				1FEC11D9299A933900EBE779 /* HelperMethods.swift */,
+				1FA3EB3B2999B04000C57E0E /* Mocks */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FEC11D6299A72FA00EBE779 /* CharactersProviderTests.swift in Sources */,
+				1FEC11DC299A9D4600EBE779 /* ApiRouterTests.swift in Sources */,
 				1FEC11CF299A58B800EBE779 /* CharactersTableViewCellTests.swift in Sources */,
 				1FEC11DA299A933900EBE779 /* HelperMethods.swift in Sources */,
 				1FA3EB412999B0EC00C57E0E /* CharactersWireframeMock.swift in Sources */,

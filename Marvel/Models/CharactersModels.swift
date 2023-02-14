@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Response: Codable {
+struct MarvelResponse: Codable {
     let copyright: String
     let attributionText: String
     let data: CharactersData

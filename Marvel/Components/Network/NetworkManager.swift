@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 protocol NetworkManager {
-    func request<Response: Decodable>(_ urlRequest: URLRequest,
-                                      onSuccess: @escaping (Response, Int?) -> Void,
+    func request<T: Decodable>(_ urlRequest: URLRequest,
+                                      onSuccess: @escaping (T, Int?) -> Void,
                                       onError: @escaping (Error, Int?, Data?) -> Void)
 }
 
@@ -25,12 +25,12 @@ class NetworkServer: NetworkManager {
         self.session = session
     }
     
-    func request<Response: Decodable>(_ urlRequest: URLRequest,
-                                      onSuccess: @escaping (Response, Int?) -> Void,
+    func request<T: Decodable>(_ urlRequest: URLRequest,
+                                      onSuccess: @escaping (T, Int?) -> Void,
                                       onError: @escaping (Error, Int?, Data?) -> Void) {
         session
             .request(urlRequest)
-            .responseDecodable { (dataResponse: DataResponse<Response, AFError>) in
+            .responseDecodable { (dataResponse: DataResponse<T, AFError>) in
                 switch dataResponse.result {
                 case .success(let result):
                     onSuccess(result, dataResponse.response?.statusCode)

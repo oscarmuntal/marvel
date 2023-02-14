@@ -38,5 +38,5 @@ protocol CharactersPresenterContract {
 }
 
 protocol CharactersInteractorContract {
-    func fetchCharacters(offset: String) -> AnyPublisher<Response, MarvelError>
+    func fetchCharacters(offset: String) -> AnyPublisher<MarvelResponse, MarvelError>
 }

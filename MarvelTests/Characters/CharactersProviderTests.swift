@@ -21,7 +21,7 @@ class CharactersProviderTest: XCTestCase {
     
     func testFetchCharactersSuccess() {
         // given
-        let expectedResult = Result<Response, MarvelError>.success(defaultResponse())
+        let expectedResult = Result<MarvelResponse, MarvelError>.success(defaultResponse())
         apiRouter.completionResult = expectedResult
         
         // when
@@ -50,7 +50,7 @@ class CharactersProviderTest: XCTestCase {
     
     func testFetchCharactersFailure() {
         // given
-        let expectedResult = Result<Response, MarvelError>.failure(.other)
+        let expectedResult = Result<MarvelResponse, MarvelError>.failure(.other)
         apiRouter.completionResult = expectedResult
         
         // when

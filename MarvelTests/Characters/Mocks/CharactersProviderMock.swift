@@ -9,9 +9,9 @@ import Combine
 @testable import Marvel
 
 class CharactersProviderMock: CharactersProviderContract {
-    var result: Result<Response, MarvelError>!
+    var result: Result<MarvelResponse, MarvelError>!
     
-    func fetchCharacters(offset: String) -> AnyPublisher<Response, MarvelError> {
+    func fetchCharacters(offset: String) -> AnyPublisher<MarvelResponse, MarvelError> {
         return Result.Publisher(result).eraseToAnyPublisher()
     }
 }
