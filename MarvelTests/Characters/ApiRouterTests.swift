@@ -18,8 +18,6 @@ class ApiRouterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-//        networkManager = NetworkManagerMock()
-//        apiRouter = ApiRouter(networkManager: networkManager)
     }
     
     func testRequestDecodableSuccess() {
