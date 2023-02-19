@@ -8,8 +8,8 @@
 import UIKit
 
 class CharactersTableViewCell: UITableViewCell {
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var name: UILabel!
     public var characterId: Int!
     
     func configure(with viewModel: CharacterCellViewModel) {

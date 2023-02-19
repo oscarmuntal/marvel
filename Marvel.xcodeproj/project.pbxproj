@@ -325,6 +325,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		1F41834429A185A100BDD2FB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1FEC11D9299A933900EBE779 /* HelperMethods.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		1FA3EB2D2998234300C57E0E /* MarvelTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,7 +364,7 @@
 				1FEC11D0299A69FF00EBE779 /* CharactersInteractorTests.swift */,
 				1FEC11D5299A72FA00EBE779 /* CharactersProviderTests.swift */,
 				1FEC11DB299A9D4600EBE779 /* ApiRouterTests.swift */,
-				1FEC11D9299A933900EBE779 /* HelperMethods.swift */,
+				1F41834429A185A100BDD2FB /* Helpers */,
 				1FA3EB3B2999B04000C57E0E /* Mocks */,
 			);
 			path = Characters;

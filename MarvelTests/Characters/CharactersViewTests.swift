@@ -49,7 +49,7 @@ class CharactersViewTests: XCTestCase {
         let indexPath = IndexPath(row: 0, section: 0)
         
         // When
-        let cell = charactersView.tableView(tableView, cellForRowAt: indexPath) as! CharactersTableViewCell
+        let cell = charactersView.tableView(tableView, cellForRowAt: indexPath) as! CharactersTableViewCellMock
         
         // Then
         XCTAssertEqual(cell.characterId, cellViewModel.id)
@@ -91,7 +91,6 @@ class CharactersViewTests: XCTestCase {
         
         // Then
         XCTAssertNotNil(tableFooterView, "Table footer view should not be nil")
-        XCTAssertTrue(tableFooterView is UIView, "Table footer view should be of type UIView")
     }
     
     func testCreateSpinnerFooter() {
@@ -101,7 +100,6 @@ class CharactersViewTests: XCTestCase {
         
         // Then
         XCTAssertNotNil(spinerFooter, "Spinner footer view should not be nil")
-        XCTAssertTrue(spinerFooter is UIView, "Spinner footer view should be of type UIView")
         XCTAssertTrue(spinerFooter.subviews.first is UIActivityIndicatorView, "Spinner footer view should contain a UIActivityIndicatorView")
     }
     
@@ -163,7 +161,7 @@ class UITableViewMock: UITableView {
     var reloadDataWasCalled = false
     var dequeueReusableCellWithIdentifierWasCalled = false
     var dequeueReusableCellWithIdentifierIndexPath: IndexPath?
-    
+
     override func reloadData() {
         reloadDataWasCalled = true
     }
@@ -171,9 +169,23 @@ class UITableViewMock: UITableView {
     override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
         dequeueReusableCellWithIdentifierWasCalled = true
         dequeueReusableCellWithIdentifierIndexPath = indexPath
-        return UITableViewCell()
+        if identifier == "CharacterCell" {
+            return CharactersTableViewCellMock(style: .default, reuseIdentifier: "CharacterCell")
+        } else {
+            return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        }
     }
 }
 
-
-
+class CharactersTableViewCellMock: CharactersTableViewCell {
+    var configureWasCalled = false
+    var configureViewModel: CharacterCellViewModel?
+    
+    override func configure(with viewModel: CharacterCellViewModel) {
+        configureWasCalled = true
+        configureViewModel = viewModel
+        name = UILabel()
+        name.text = viewModel.name
+        characterId = viewModel.id
+    }
+}
