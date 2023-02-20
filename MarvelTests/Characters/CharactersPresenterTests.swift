@@ -25,8 +25,6 @@ class CharactersPresenterTests: XCTestCase {
         presenter = CharactersPresenter(wireframe: wireframe, interactor: interactor, router: router)
     }
     
-    //MARK: - Tests
-    
     func testNumCharacters() {
         // given
         let charactersData = CharactersData(offset: 0, limit: 20, total: 100, count: 20, results: [
@@ -76,7 +74,9 @@ class CharactersPresenterTests: XCTestCase {
         presenter.didScroll()
         
         // then
-        XCTAssertTrue(view.configureTableFooterCalled)
+        DispatchQueue.main.async {
+            XCTAssertTrue(self.view.configureTableFooterCalled)
+        }
         XCTAssertTrue(interactor.fetchCharactersCalled)
         XCTAssertEqual(interactor.offset, "0")
     }
@@ -98,25 +98,12 @@ class CharactersPresenterTests: XCTestCase {
         presenter.view = view
         
         // then
-        XCTAssertTrue(view.configureTableFooterCalled)
+        DispatchQueue.main.async {
+            XCTAssertTrue(self.view.configureTableFooterCalled)
+        }
         XCTAssertTrue(interactor.fetchCharactersCalled)
         XCTAssertEqual(presenter.currentPage, 0)
         XCTAssertEqual(presenter.offset, "0")
     }
 }
 
-
-// MARK: - Helpers
-
-func defaultCharacter(id: Int = 0, name: String = "") -> Character {
-    let characterName = name != "" ? name : "Character \(id)"
-    return Character(id: id, name: characterName, description: "Description \(id)", thumbnail: Thumbnail(path: "path/to/thumbnail1", thumbnailExtension: "jpg"), comics: emptySectionStructure(), series: emptySectionStructure(), stories: emptySectionStructure(), events: emptySectionStructure(), urls: [])
-}
-
-func emptySectionStructure() -> SectionStructure {
-    SectionStructure(available: 0, collectionURI: "", items: [])
-}
-
-func ironmanCharacter() -> Character {
-    Character(id: 123, name: "Iron Man", description: "Iron Man description", thumbnail: Thumbnail(path: "path/to/thumbnail1", thumbnailExtension: "jpg"), comics: emptySectionStructure(), series: emptySectionStructure(), stories: emptySectionStructure(), events: emptySectionStructure(), urls: [])
-}
