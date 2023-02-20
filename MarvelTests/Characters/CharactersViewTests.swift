@@ -32,7 +32,6 @@ class CharactersViewTests: XCTestCase {
     func testNumberOfRowsInSection() {
         // Given
         presenter.numCharactersReturnValue = 5
-        charactersView.reload()
 
         // When
         let numberOfRows = charactersView.tableView(tableView, numberOfRowsInSection: 0)
