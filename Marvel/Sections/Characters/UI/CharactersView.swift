@@ -64,9 +64,7 @@ private extension CharactersView {
 
 extension CharactersView: CharactersViewContract {
     func configureTableFooter() {
-        DispatchQueue.main.async {
-            self.tableView.tableFooterView = self.createSpinerFooter()
-        }
+        self.table.tableFooterView = self.createSpinerFooter()
     }
     
     func errorAlertAction() -> UIAlertAction {

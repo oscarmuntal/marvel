@@ -9,7 +9,6 @@ import XCTest
 @testable import Marvel
 
 class CharactersViewTests: XCTestCase {
-
     var charactersView: CharactersView!
     var presenter: CharactersPresenterMock!
     var tableView: UITableViewMock!

@@ -63,7 +63,7 @@ private extension CharactersPresenter {
     func loadCharacters() {
         guard let view = view, let interactor = interactor, !paginating else { return }
         paginating = true
-        view.configureTableFooter()
+        configureTableFooter(with: view)
         interactor.fetchCharacters(offset: offset)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
@@ -78,5 +78,11 @@ private extension CharactersPresenter {
                 self?.characters.append(contentsOf: response.data.results)
                 self?.currentPage += 1
             }).store(in: &cancellables)
+    }
+    
+    func configureTableFooter(with view: CharactersViewContract) {
+        DispatchQueue.main.async {
+            view.configureTableFooter()
+        }
     }
 }
