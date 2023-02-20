@@ -8,7 +8,6 @@
 import Foundation
 @testable import Marvel
 
-// MARK: - Helpers
 func defaultResponse() -> MarvelResponse {
     MarvelResponse(copyright: "copyright: Òscar Muntal 2023", attributionText: "", data: defaultCharactersData())
 }
